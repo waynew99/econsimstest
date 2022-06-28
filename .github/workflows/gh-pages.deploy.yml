@@ -1,4 +1,4 @@
-name: Build Test Lint
+name: Build Test Lint Deploy
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: 14.x
 
     steps:
       - name: Get files
