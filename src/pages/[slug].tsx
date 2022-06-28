@@ -17,6 +17,7 @@ import { Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
 const slugToContainer = (slug : string) => {
+  console.log(slug);
   switch (slug) {
     case 'law-of-large-numbers': return <LawOfLargeNumbersContainer />;
     case 'central-limit-theorem': return <CentralLimitTheoremContainer />;
@@ -42,7 +43,7 @@ export default function Module() {
   const router = useRouter();
   useEffect(() => {
     if (router.isReady && router.query.slug) {
-      setCurrSlug(router.query.slug[0]);
+      setCurrSlug(router.query.slug as string);
     }
   }, [router.isReady]);
 
